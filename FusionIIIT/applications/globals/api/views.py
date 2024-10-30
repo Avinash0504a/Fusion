@@ -89,7 +89,7 @@ def auth_view(request):
     accessible_modules = {}
     
     for designation in designation_info:
-        module_access = ModuleAccess.objects.filter(designation=designation).first()
+        module_access = ModuleAccess.objects.filter(designation__iexact=designation).first()
         if module_access:
             filtered_modules = {}
 
